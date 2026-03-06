@@ -67,17 +67,36 @@ opacity:.7;
 
 .hero{
 height:100vh;
-background:
-linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.65)),
-url("images/background.jpg") center/cover no-repeat;
 display:flex;
 align-items:center;
 padding:0 8%;
 color:white;
+opacity:0; /* hide until image loads */
+transition:opacity 1s ease;
+position:relative;
+background:#111; /* fallback color */
+}
+
+.hero.loaded{
+opacity:1; /* show after image loaded */
+}
+
+.hero::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:
+linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.65));
+z-index:0;
 }
 
 .hero-content{
 max-width:750px;
+position:relative;
+z-index:1;
 }
 
 .hero h1{
@@ -290,7 +309,7 @@ display:none;
 
 <!-- HERO -->
 
-<section class="hero">
+<section class="hero" id="hero">
 
 <div class="hero-content">
 
@@ -468,6 +487,17 @@ Upon purchase, this website will be customized with your company name, contact d
 <p>© 2026 <span>YOUR BUSINESS NAME</span>. All Rights Reserved.</p>
 
 </footer>
+
+<script>
+// Preload hero background image
+const hero = document.getElementById('hero');
+const bgImg = new Image();
+bgImg.src = 'images/background.jpg';
+bgImg.onload = () => {
+  hero.style.background = `linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.65)), url('${bgImg.src}') center/cover no-repeat`;
+  hero.classList.add('loaded');
+};
+</script>
 
 </body>
 </html>
