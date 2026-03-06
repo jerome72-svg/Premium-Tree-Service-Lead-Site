@@ -8,278 +8,267 @@
 
 <style>
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Inter',sans-serif;
-scroll-behavior:smooth;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Inter',sans-serif;
+  scroll-behavior:smooth;
 }
 
 body{
-background:#ffffff;
-color:#111;
-line-height:1.6;
+  background:#ffffff;
+  color:#111;
+  line-height:1.6;
 }
 
 /* NAVBAR */
 nav{
-position:fixed;
-top:0;
-width:100%;
-padding:18px 8%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-background:rgba(0,0,0,0.55);
-backdrop-filter:blur(10px);
-z-index:999;
+  position:fixed;
+  top:0;
+  width:100%;
+  padding:18px 8%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:rgba(0,0,0,0.55);
+  backdrop-filter:blur(10px);
+  z-index:999;
 }
 
 .logo{
-color:#fff;
-font-size:22px;
-font-weight:700;
-letter-spacing:1px;
+  color:#fff;
+  font-size:22px;
+  font-weight:700;
+  letter-spacing:1px;
 }
 
 nav ul{
-display:flex;
-gap:30px;
-list-style:none;
+  display:flex;
+  gap:30px;
+  list-style:none;
 }
 
 nav ul li a{
-color:#fff;
-text-decoration:none;
-font-weight:500;
-transition:.3s;
+  color:#fff;
+  text-decoration:none;
+  font-weight:500;
+  transition:.3s;
 }
 
 nav ul li a:hover{
-opacity:.7;
+  opacity:.7;
 }
 
 /* HERO */
 .hero{
-height:100vh;
-display:flex;
-align-items:center;
-padding:0 8%;
-color:white;
-opacity:0; /* hide until image loads */
-transition:opacity 1s ease;
-position:relative;
-background:#111; /* fallback color */
-background-size:cover;
-background-position:center;
+  height:100vh;
+  display:flex;
+  align-items:center;
+  padding:0 8%;
+  position:relative;
+  overflow:hidden;
 }
 
-.hero.loaded{
-opacity:1;
+.hero img{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:0;
 }
 
-.hero::before{
-content:"";
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.65));
-z-index:0;
+.hero::after{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.65));
+  z-index:1;
 }
 
 .hero-content{
-max-width:750px;
-position:relative;
-z-index:1;
+  max-width:750px;
+  position:relative;
+  z-index:2;
+  opacity:0;
+  transition:opacity 1s ease;
 }
 
-.hero h1{
-font-size:64px;
-line-height:1.1;
-margin-bottom:20px;
-font-weight:800;
-}
-
-.hero p{
-font-size:20px;
-opacity:.9;
-margin-bottom:35px;
-}
-
+/* Buttons */
 .buttons{
-display:flex;
-gap:20px;
-flex-wrap:wrap;
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
 }
 
 .btn{
-padding:15px 32px;
-border-radius:40px;
-text-decoration:none;
-font-weight:600;
-font-size:16px;
-transition:.3s;
+  padding:15px 32px;
+  border-radius:40px;
+  text-decoration:none;
+  font-weight:600;
+  font-size:16px;
+  transition:.3s;
 }
 
 .btn-primary{
-background:#ffffff;
-color:#000;
+  background:#ffffff;
+  color:#000;
 }
 
 .btn-primary:hover{
-transform:translateY(-2px);
-box-shadow:0 10px 30px rgba(0,0,0,0.2);
+  transform:translateY(-2px);
+  box-shadow:0 10px 30px rgba(0,0,0,0.2);
 }
 
 .btn-secondary{
-border:2px solid #fff;
-color:white;
+  border:2px solid #fff;
+  color:white;
 }
 
 .btn-secondary:hover{
-background:white;
-color:black;
+  background:white;
+  color:black;
 }
 
 /* SECTION */
 section{
-padding:110px 8%;
+  padding:110px 8%;
 }
 
 .section-title{
-font-size:38px;
-margin-bottom:50px;
-font-weight:800;
+  font-size:38px;
+  margin-bottom:50px;
+  font-weight:800;
 }
 
 /* SERVICES */
 .services{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-gap:30px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:30px;
 }
 
 .card{
-padding:35px;
-border-radius:16px;
-background:#d6d5d5;
-transition:.3s;
+  padding:35px;
+  border-radius:16px;
+  background:#d6d5d5;
+  transition:.3s;
 }
 
 .card:hover{
-transform:translateY(-6px);
-box-shadow:0 20px 40px rgba(0,0,0,.08);
+  transform:translateY(-6px);
+  box-shadow:0 20px 40px rgba(0,0,0,.08);
 }
 
 .card h3{
-margin-bottom:10px;
-font-size:20px;
+  margin-bottom:10px;
+  font-size:20px;
 }
 
 /* WHY */
 .features{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:30px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:30px;
 }
 
 .feature{
-padding:30px;
-background:#f8f8f8;
-border-radius:14px;
+  padding:30px;
+  background:#f8f8f8;
+  border-radius:14px;
 }
 
 /* ABOUT */
 .about{
-max-width:750px;
-font-size:18px;
-opacity:.9;
+  max-width:750px;
+  font-size:18px;
+  opacity:.9;
 }
 
 /* TESTIMONIALS */
 .reviews{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:30px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
 }
 
 .review{
-background:#f8f8f8;
-padding:30px;
-border-radius:16px;
+  background:#f8f8f8;
+  padding:30px;
+  border-radius:16px;
 }
 
 .review strong{
-display:block;
-margin-top:12px;
+  display:block;
+  margin-top:12px;
 }
 
 /* SERVICE AREAS */
 .areas{
-font-size:18px;
-opacity:.85;
-line-height:1.9;
+  font-size:18px;
+  opacity:.85;
+  line-height:1.9;
 }
 
 /* CTA */
 .cta{
-background:#111;
-color:white;
-text-align:center;
-padding:90px 8%;
+  background:#111;
+  color:white;
+  text-align:center;
+  padding:90px 8%;
 }
 
 .cta h2{
-font-size:42px;
-margin-bottom:20px;
+  font-size:42px;
+  margin-bottom:20px;
 }
 
 .cta a{
-display:inline-block;
-margin-top:20px;
+  display:inline-block;
+  margin-top:20px;
 }
 
 /* CONTACT */
 .contact{
-font-size:18px;
-line-height:2;
+  font-size:18px;
+  line-height:2;
 }
 
 /* FOOTER */
 footer{
-padding:40px 8%;
-background:#000;
-color:#aaa;
-font-size:14px;
+  padding:40px 8%;
+  background:#000;
+  color:#aaa;
+  font-size:14px;
 }
 
 footer span{
-color:#fff;
-font-weight:600;
+  color:#fff;
+  font-weight:600;
 }
 
 /* MOBILE */
 @media(max-width:768px){
-.hero h1{
-font-size:42px;
-}
-.hero p{
-font-size:18px;
-}
-nav ul{
-display:none;
-}
+  .hero h1{
+    font-size:42px;
+  }
+  .hero p{
+    font-size:18px;
+  }
+  nav ul{
+    display:none;
+  }
 }
 </style>
 </head>
-
 <body>
 
 <nav>
 <div class="logo">YOUR BUSINESS NAME</div>
-
 <ul>
 <li><a href="#services">Services</a></li>
 <li><a href="#about">About</a></li>
@@ -290,7 +279,8 @@ display:none;
 
 <!-- HERO -->
 <section class="hero" id="hero">
-<div class="hero-content">
+<img src="images/background.jpg" alt="Tree Service Background" id="hero-img">
+<div class="hero-content" id="hero-content">
 <h1>Professional Tree Service You Can Trust</h1>
 <p>Expert tree removal, trimming, and storm cleanup services designed to keep your property safe, clean, and beautiful.</p>
 <div class="buttons">
@@ -409,14 +399,16 @@ Upon purchase, this website will be customized with your company name, contact d
 </footer>
 
 <script>
-// Preload hero background and show hero after loaded
-const hero = document.getElementById('hero');
-const bg = new Image();
-bg.src = 'images/background.jpg';
-bg.onload = () => {
-  hero.style.backgroundImage = `url('${bg.src}')`;
-  hero.classList.add('loaded');
-};
+// Wait until hero image fully loads, then show content
+const heroImg = document.getElementById('hero-img');
+const heroContent = document.getElementById('hero-content');
+if(heroImg.complete){
+    heroContent.style.opacity = 1;
+}else{
+    heroImg.onload = () => {
+        heroContent.style.opacity = 1;
+    }
+}
 </script>
 
 </body>
