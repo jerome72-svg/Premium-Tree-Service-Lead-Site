@@ -3,13 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Premium Tree Service Website</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
-
 *{
 margin:0;
 padding:0;
@@ -25,7 +22,6 @@ line-height:1.6;
 }
 
 /* NAVBAR */
-
 nav{
 position:fixed;
 top:0;
@@ -64,7 +60,6 @@ opacity:.7;
 }
 
 /* HERO */
-
 .hero{
 height:100vh;
 display:flex;
@@ -75,10 +70,12 @@ opacity:0; /* hide until image loads */
 transition:opacity 1s ease;
 position:relative;
 background:#111; /* fallback color */
+background-size:cover;
+background-position:center;
 }
 
 .hero.loaded{
-opacity:1; /* show after image loaded */
+opacity:1;
 }
 
 .hero::before{
@@ -88,8 +85,7 @@ top:0;
 left:0;
 width:100%;
 height:100%;
-background:
-linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.65));
+background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.65));
 z-index:0;
 }
 
@@ -148,7 +144,6 @@ color:black;
 }
 
 /* SECTION */
-
 section{
 padding:110px 8%;
 }
@@ -160,7 +155,6 @@ font-weight:800;
 }
 
 /* SERVICES */
-
 .services{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
@@ -185,7 +179,6 @@ font-size:20px;
 }
 
 /* WHY */
-
 .features{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -199,7 +192,6 @@ border-radius:14px;
 }
 
 /* ABOUT */
-
 .about{
 max-width:750px;
 font-size:18px;
@@ -207,7 +199,6 @@ opacity:.9;
 }
 
 /* TESTIMONIALS */
-
 .reviews{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
@@ -226,7 +217,6 @@ margin-top:12px;
 }
 
 /* SERVICE AREAS */
-
 .areas{
 font-size:18px;
 opacity:.85;
@@ -234,7 +224,6 @@ line-height:1.9;
 }
 
 /* CTA */
-
 .cta{
 background:#111;
 color:white;
@@ -253,14 +242,12 @@ margin-top:20px;
 }
 
 /* CONTACT */
-
 .contact{
 font-size:18px;
 line-height:2;
 }
 
 /* FOOTER */
-
 footer{
 padding:40px 8%;
 background:#000;
@@ -274,23 +261,17 @@ font-weight:600;
 }
 
 /* MOBILE */
-
 @media(max-width:768px){
-
 .hero h1{
 font-size:42px;
 }
-
 .hero p{
 font-size:18px;
 }
-
 nav ul{
 display:none;
 }
-
 }
-
 </style>
 </head>
 
@@ -308,193 +289,132 @@ display:none;
 </nav>
 
 <!-- HERO -->
-
 <section class="hero" id="hero">
-
 <div class="hero-content">
-
 <h1>Professional Tree Service You Can Trust</h1>
-
 <p>Expert tree removal, trimming, and storm cleanup services designed to keep your property safe, clean, and beautiful.</p>
-
 <div class="buttons">
-
 <a href="#contact" class="btn btn-primary">Get A Free Quote</a>
-
 <a href="tel:5555555555" class="btn btn-secondary">Call Now</a>
-
 </div>
-
 </div>
-
 </section>
 
 <!-- SERVICES -->
-
 <section id="services">
-
 <h2 class="section-title">Our Services</h2>
-
 <div class="services">
-
 <div class="card">
 <h3>Tree Removal</h3>
 <p>Safe and efficient removal of hazardous or unwanted trees.</p>
 </div>
-
 <div class="card">
 <h3>Tree Trimming</h3>
 <p>Professional pruning to keep trees healthy and beautiful.</p>
 </div>
-
 <div class="card">
 <h3>Stump Grinding</h3>
 <p>Complete stump removal to restore your yard.</p>
 </div>
-
 <div class="card">
 <h3>Emergency Storm Cleanup</h3>
 <p>Fast response for fallen trees and storm damage.</p>
 </div>
-
 <div class="card">
 <h3>Arborist Inspection</h3>
 <p>Expert evaluation to maintain tree health and safety.</p>
 </div>
-
 </div>
-
 </section>
 
 <!-- WHY CHOOSE US -->
-
 <section>
-
 <h2 class="section-title">Why Choose Us</h2>
-
 <div class="features">
-
 <div class="feature">
 <h3>Licensed & Insured</h3>
 <p>Professional service backed by proper certifications.</p>
 </div>
-
 <div class="feature">
 <h3>Fast Response</h3>
 <p>Quick scheduling and reliable emergency services.</p>
 </div>
-
 <div class="feature">
 <h3>Affordable Pricing</h3>
 <p>Fair and transparent pricing for every project.</p>
 </div>
-
 <div class="feature">
 <h3>Local Experts</h3>
 <p>Years of experience serving local homeowners.</p>
 </div>
-
 </div>
-
 </section>
 
 <!-- ABOUT -->
-
 <section id="about">
-
 <h2 class="section-title">About Us</h2>
-
 <p class="about">
 YOUR BUSINESS NAME has helped homeowners maintain safe and beautiful landscapes for years. Our experienced team provides professional tree care services using industry-leading equipment and safe techniques. Whether it's routine trimming or emergency tree removal, our mission is to deliver reliable and high-quality service that protects your home and enhances your property.
 </p>
-
 </section>
 
 <!-- REVIEWS -->
-
 <section id="reviews">
-
 <h2 class="section-title">What Customers Say</h2>
-
 <div class="reviews">
-
 <div class="review">
 <p>"They removed a massive tree from our backyard quickly and safely. Extremely professional team."</p>
 <strong>— Michael R.</strong>
 </div>
-
 <div class="review">
 <p>"Very responsive and affordable. Our trees have never looked better."</p>
 <strong>— Sarah L.</strong>
 </div>
-
 <div class="review">
 <p>"After a storm knocked down a tree, they arrived the same day and handled everything."</p>
 <strong>— David K.</strong>
 </div>
-
 </div>
-
 </section>
 
 <!-- SERVICE AREAS -->
-
 <section>
-
 <h2 class="section-title">Service Areas</h2>
-
 <p class="areas">
-Serving homeowners in:  
-Austin • Round Rock • Cedar Park • Georgetown • Pflugerville • Leander
+Serving homeowners in: Austin • Round Rock • Cedar Park • Georgetown • Pflugerville • Leander
 </p>
-
 </section>
 
 <!-- CTA -->
-
 <section class="cta">
-
 <h2>Need a Tree Removed Today?</h2>
-
 <p>Call now to get a fast quote from a trusted professional.</p>
-
 <a href="tel:5555555555" class="btn btn-primary">Call (555) 555-5555</a>
-
 </section>
 
 <!-- CONTACT -->
-
 <section id="contact">
-
 <h2 class="section-title">Contact</h2>
-
 <div class="contact">
-
 <p><strong>Phone:</strong> (555) 555-5555</p>
-
 <p><strong>Email:</strong> your@email.com</p>
-
 <p style="margin-top:20px;font-size:15px;opacity:.7;">
 Upon purchase, this website will be customized with your company name, contact details, and photos.
 </p>
-
 </div>
-
 </section>
 
 <footer>
-
 <p>© 2026 <span>YOUR BUSINESS NAME</span>. All Rights Reserved.</p>
-
 </footer>
 
 <script>
-// Preload hero background image
+// Preload hero background and show hero after loaded
 const hero = document.getElementById('hero');
-const bgImg = new Image();
-bgImg.src = 'images/background.jpg';
-bgImg.onload = () => {
-  hero.style.background = `linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.65)), url('${bgImg.src}') center/cover no-repeat`;
+const bg = new Image();
+bg.src = 'images/background.jpg';
+bg.onload = () => {
+  hero.style.backgroundImage = `url('${bg.src}')`;
   hero.classList.add('loaded');
 };
 </script>
